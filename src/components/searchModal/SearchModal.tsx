@@ -5,15 +5,21 @@ import AxiosService from 'services/AxiosService';
 import { InputClickContext } from 'context/inputContext';
 import { TfiSearch } from 'react-icons/tfi';
 import { Data } from 'interfaces/interface';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import S from './searchModalStyle';
 
 const SearchModal = () => {
-  const { isClicked, isChanged, inputValue } = useContext(InputClickContext);
+  const { isClicked, isChanged, inputValue, setInputValue } =
+    useContext(InputClickContext);
 
   const [searchedContent, setSearchedContent] = useState<Data[]>([]);
 
-  AxiosService(inputValue, setSearchedContent);
+  useEffect(() => {
+    const debounce = setTimeout(() => {
+      return AxiosService(inputValue, setSearchedContent);
+    }, 3000);
+    return () => clearTimeout(debounce);
+  }, [inputValue]);
 
   return (
     <>

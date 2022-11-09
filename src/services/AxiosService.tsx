@@ -6,11 +6,9 @@ const AxiosService = (
   letter: string,
   setData: React.Dispatch<React.SetStateAction<Data[]>>
 ) => {
-  useEffect(() => {
-    axios
-      .get(`http://localhost:4000/sick?q=${letter}`)
-      .then((res) => setData(res.data));
-  }, [letter]);
+  axios
+    .get(`http://localhost:4000/sick?q=${letter}`)
+    .then((res) => setData(res.data));
 };
 
 export default AxiosService;

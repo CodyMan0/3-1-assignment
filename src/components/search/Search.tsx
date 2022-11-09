@@ -1,5 +1,5 @@
 import { InputClickContext } from 'context/inputContext';
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { TfiSearch } from 'react-icons/tfi';
 import S from './SearchStyle';
 
