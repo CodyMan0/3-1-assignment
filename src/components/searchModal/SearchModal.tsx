@@ -1,14 +1,19 @@
 import LatestSearch from 'components/latestSearch/LatestSearch';
 import Recommendation from 'components/recommendation/Recommendation';
+import Keyword from 'components/keyword/Keyword';
+import AxiosService from 'services/AxiosService';
 import { InputClickContext } from 'context/inputContext';
 import { TfiSearch } from 'react-icons/tfi';
-import React, { useContext } from 'react';
+import { Data } from 'interfaces/interface';
+import React, { useContext, useState } from 'react';
 import S from './searchModalStyle';
 
 const SearchModal = () => {
   const { isClicked, isChanged, inputValue } = useContext(InputClickContext);
-  console.log(isClicked);
-  console.log(isChanged);
+
+  const [searchedContent, setSearchedContent] = useState<Data[]>([]);
+
+  AxiosService(inputValue, setSearchedContent);
 
   return (
     <>
@@ -27,6 +32,7 @@ const SearchModal = () => {
               <TfiSearch />
               {inputValue}
             </S.Data>
+            <Keyword contentList={searchedContent} />
           </S.SubContainer>
         </S.Container>
       )}
