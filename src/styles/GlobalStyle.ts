@@ -10,6 +10,9 @@ const GlobalStyle = createGlobalStyle`
   color: inherit;
   text-decoration: none;
   }
+  p{
+    margin: 0;
+  }
   li {
   list-style: none;
   }
