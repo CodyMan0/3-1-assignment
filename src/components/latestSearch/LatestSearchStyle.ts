@@ -9,7 +9,14 @@ const Header = styled.h1`
   color: lightgray;
 `;
 
-const Content = styled.p``;
+const Content = styled.p`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  div {
+    margin-left: 10px;
+  }
+`;
 
 const S = {
   Container,

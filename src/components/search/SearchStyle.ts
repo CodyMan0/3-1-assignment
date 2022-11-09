@@ -1,10 +1,19 @@
 import styled from 'styled-components';
 
+const Input = styled.input`
+  width: 75%;
+  border: none;
+  font-size: 20px;
+  padding: 0px 2px 0px 15px;
+  &:focus {
+    outline: none;
+  }
+`;
+
 const Container = styled.div`
   position: relative;
   margin-top: 40px;
 `;
-
 const FirstIcon = styled.div`
   color: #a6afb7;
   font-size: 20px;
@@ -26,16 +35,6 @@ const SecondIcon = styled.div`
   background-color: #007be9;
   font-size: 20px;
   font-weight: 700;
-`;
-
-const Input = styled.input`
-  width: 75%;
-  border: none;
-  font-size: 20px;
-  padding: 0px 2px 0px 15px;
-  &:focus {
-    outline: None;
-  }
 `;
 
 const InputContainer = styled.div`

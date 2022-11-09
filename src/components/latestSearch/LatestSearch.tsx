@@ -8,10 +8,16 @@ const LatestSearch = () => {
       <S.Header>최근 검색어</S.Header>
       <S.Content>
         <TfiSearch />
-        /123
+        <div>담낭</div>
       </S.Content>
-      <S.Content>123</S.Content>
-      <S.Content>123</S.Content>
+      <S.Content>
+        <TfiSearch />
+        <div>염좌</div>
+      </S.Content>
+      <S.Content>
+        <TfiSearch />
+        <div>염증</div>
+      </S.Content>
     </S.Container>
   );
 };

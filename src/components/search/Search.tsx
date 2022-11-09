@@ -8,7 +8,7 @@ const Search = () => {
     useContext(InputClickContext);
 
   const onClickHandler = () => {
-    setIsClicked((prev) => !prev);
+    setIsClicked(false);
   };
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,7 +24,7 @@ const Search = () => {
   };
 
   return (
-    <S.Container>
+    <S.Container onClick={onClickHandler}>
       <S.InputContainer>
         <S.FirstIcon>
           <TfiSearch />
@@ -32,7 +32,6 @@ const Search = () => {
         <S.Input
           type="search"
           placeholder="질환명을 입력해주세요"
-          onClick={onClickHandler}
           onChange={(e) => onChangeHandler(e)}
         />
         <S.SecondIcon>
