@@ -1,15 +1,40 @@
-import React from 'react';
+import { InputClickContext } from 'context/inputContext';
+import React, { useContext, useRef } from 'react';
 import { TfiSearch } from 'react-icons/tfi';
 import S from './SearchStyle';
 
 const Search = () => {
+  const { setIsClicked, setIsChanged, setInputValue } =
+    useContext(InputClickContext);
+
+  const onClickHandler = () => {
+    setIsClicked((prev) => !prev);
+  };
+
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.selectionEnd !== 0) {
+      setIsClicked(false);
+      setIsChanged(true);
+      setInputValue(e.target.value);
+    }
+    if (e.target.selectionEnd === 0) {
+      setIsClicked(true);
+      setIsChanged(false);
+    }
+  };
+
   return (
     <S.Container>
       <S.InputContainer>
         <S.FirstIcon>
           <TfiSearch />
         </S.FirstIcon>
-        <S.Input type="search" placeholder="질환명을 입력해주세요" />
+        <S.Input
+          type="search"
+          placeholder="질환명을 입력해주세요"
+          onClick={onClickHandler}
+          onChange={(e) => onChangeHandler(e)}
+        />
         <S.SecondIcon>
           <TfiSearch />
         </S.SecondIcon>

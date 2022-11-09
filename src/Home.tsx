@@ -1,5 +1,6 @@
 import Search from 'components/search/Search';
 import SearchModal from 'components/searchModal/SearchModal';
+import InputClickProvider from 'context/inputContext';
 import React from 'react';
 import AxiosService from 'services/AxiosService';
 import styled from 'styled-components';
@@ -25,8 +26,10 @@ const Home = () => {
   return (
     <Container>
       <Header>국내 모든 임상시험 검색하고 온라인으로 참여하기</Header>
-      <Search />
-      <SearchModal />
+      <InputClickProvider>
+        <Search />
+        <SearchModal />
+      </InputClickProvider>
     </Container>
   );
 };

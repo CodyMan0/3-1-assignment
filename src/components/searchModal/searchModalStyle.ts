@@ -12,9 +12,19 @@ const SubContainer = styled.div`
   padding: 20px;
 `;
 
+const Data = styled.div`
+  height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+`;
+
 const S = {
   Container,
   SubContainer,
+  Data,
 };
 
 export default S;
