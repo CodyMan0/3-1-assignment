@@ -17,8 +17,10 @@ const SearchModal = () => {
   useEffect(() => {
     const debounce = setTimeout(() => {
       return AxiosService(inputValue, setSearchedContent);
-    }, 3000);
-    return () => clearTimeout(debounce);
+    }, 300);
+    return () => {
+      clearTimeout(debounce);
+    };
   }, [inputValue]);
 
   return (
