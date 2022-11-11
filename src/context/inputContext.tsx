@@ -16,6 +16,7 @@ const InputClickProvider = ({ children }: { children: React.ReactNode }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isChanged, setIsChanged] = useState(false);
   const [inputValue, setInputValue] = useState('ㄱ');
+	//분리하기 왜? -> 
 
   const value = useMemo(() => {
     return {

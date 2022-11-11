@@ -11,3 +11,5 @@ export type InputClick = {
   inputValue: string;
   setInputValue: React.Dispatch<React.SetStateAction<string>>;
 };
+//컴포넌트 props는 상위에 
+// 공통되는 애들은 파일에 모아두자

@@ -1,7 +1,7 @@
 import { Data } from 'interfaces/interface';
 import { TfiSearch } from 'react-icons/tfi';
-import React from 'react';
-import highlightedText from 'utils/highlightedText';
+import React, { useRef, useState } from 'react';
+import HighlightedText from 'utils/highlightedText';
 import S from './KeywordStyle';
 
 interface Props {
@@ -9,16 +9,20 @@ interface Props {
 }
 
 const Keyword = ({ contentList }: Props) => {
-  console.log('keyword', contentList);
   return (
     <S.Container>
-      {contentList.map((content, idx) => {
-        return (
-          <S.KeywordItem key={idx}>
-            {highlightedText(content?.sickNm)}
-          </S.KeywordItem>
-        );
-      })}
+      {contentList.length === 0 ? (
+        <S.KeywordItem>검색어를 찾지 못했습니다</S.KeywordItem>
+      ) : (
+        contentList.map((content) => {
+          return (
+            <S.KeywordItem key={content.sickCd}>
+              <TfiSearch />
+              {HighlightedText(content?.sickNm)}
+            </S.KeywordItem>
+          );
+        })
+      )}
     </S.Container>
   );
 };

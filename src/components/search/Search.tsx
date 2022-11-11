@@ -12,6 +12,7 @@ const Search = () => {
   };
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.selectionEnd);
     if (e.target.selectionEnd !== 0) {
       setIsClicked(false);
       setIsChanged(true);

@@ -3,16 +3,17 @@ import axios from 'axios';
 import { Data } from 'interfaces/interface';
 
 const AxiosService = (
-  letter: string,
-  setData: React.Dispatch<React.SetStateAction<Data[]>>
+	//axiosService 변수명의 의미를 다시 생각해보자!
+  letter: string
 ) => {
-  // const filteredFunction = (data: any) => {
-  //   const value = Object.values(data);
-  //   console.log(value);
-
+  // if ('caches' in window) {
+  //   caches.open('cash').then((cache) => {
+  //     console.log(cache);
+  //   });
+  // }
   axios
     .get(`http://localhost:4000/sick?q=${letter}`)
-    .then((res) => setData(res.data));
+    .then((res) => res.data);
 };
 
 export default AxiosService;

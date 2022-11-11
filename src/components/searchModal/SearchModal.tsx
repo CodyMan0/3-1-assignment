@@ -13,10 +13,11 @@ const SearchModal = () => {
     useContext(InputClickContext);
 
   const [searchedContent, setSearchedContent] = useState<Data[]>([]);
+  console.log(searchedContent);
 
   useEffect(() => {
     const debounce = setTimeout(() => {
-      return AxiosService(inputValue, setSearchedContent);
+      // return AxiosService(inputValue).then(data => setSearchedContent(data));
     }, 300);
     return () => {
       clearTimeout(debounce);

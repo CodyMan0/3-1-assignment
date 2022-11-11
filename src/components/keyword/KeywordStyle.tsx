@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
-const Container = styled.div``;
+const Container = styled.ul`
+  padding: 0;
+`;
 
-const KeywordItem = styled.div`
+const KeywordItem = styled.li`
   height: 58px;
+
   display: flex;
   align-items: center;
   gap: 10px;

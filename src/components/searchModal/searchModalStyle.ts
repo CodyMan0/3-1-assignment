@@ -19,6 +19,7 @@ const Data = styled.div`
   gap: 10px;
   font-size: 20px;
   font-weight: 700;
+  border-bottom: 1px solid lightgray;
 `;
 
 const S = {

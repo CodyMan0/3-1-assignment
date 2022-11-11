@@ -54,7 +54,7 @@
     "@typescript-eslint/no-explicit-any": 0,
     "no-plusplus": 0,
     "prefer-const": 0,
-    "import/prefer-default-export": "0",
+    "import/prefer-default-export": "off",
     "Parsing error: Expression expected": "0",
     "react/no-array-index-key": "off"
   }

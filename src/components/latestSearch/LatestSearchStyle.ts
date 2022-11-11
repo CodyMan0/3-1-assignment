@@ -9,7 +9,8 @@ const Header = styled.h1`
   color: lightgray;
 `;
 
-const Content = styled.p`
+const Content = styled.div`
+  padding: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;

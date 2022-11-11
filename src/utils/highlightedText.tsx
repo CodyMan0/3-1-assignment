@@ -4,32 +4,18 @@ import styled from 'styled-components';
 
 const HighlightedText = (text: string) => {
   const { inputValue } = useContext(InputClickContext);
-  const result = Array(text).map((element) => element.indexOf(inputValue));
-  const checkedIndex = result.toString();
+  const regex = new RegExp(`[${inputValue}]`, 'g');
 
-  console.log(checkedIndex);
+  const returnTag = (inputWord: string) => {
+    return `<strong>${inputWord}</strong>`;
+  };
 
-  return text;
+  const replace = (content: string) => {
+    const convertContent = content.replace(regex, returnTag);
+    return { __html: convertContent };
+  };
+  return <div dangerouslySetInnerHTML={replace(text)} />;
+	//string -> tag 이렇게 하면 안된다. 
 };
 
 export default HighlightedText;
-
-// const highlightedText = (text, query) => {
-//   if (query !== '' && text.includes(query)) {
-//     const parts = text.split(new RegExp(`(${query})`, 'gi'));
-
-//     return (
-//       <>
-//         {parts.map((part, index) =>
-//           part.toLowerCase() === query.toLowerCase() ? (
-//             <mark key={index}>{part}</mark>
-//           ) : (
-//             part
-//           )
-//         )}
-//       </>
-//     );
-//   }
-
-//   return text;
-// };
